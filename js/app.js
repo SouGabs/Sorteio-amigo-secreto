@@ -2,14 +2,14 @@ let listaSorteio = [];
 
 function adicionar(){
     let nomeDoAmigo = document.getElementById('nome-amigo');
-    let maiusculo = nomeDoAmigo.value.toUpperCase()
+    let maiusculo = nomeDoAmigo.value.toUpperCase();
     if(maiusculo == ''){
-        alert('Insira o nome do amigo!')
-        return
+        alert('Insira o nome do amigo!');
+        return;
     } 
     if (listaSorteio.includes(maiusculo)) {
-        alert('Esse nome ja está na lista!')
-        return
+        alert('Esse nome ja está na lista!');
+        return;
     }
         let listaDeAmigos = document.getElementById('lista-amigos');
 
@@ -27,10 +27,10 @@ function adicionar(){
 
 function sortear() {
     if( listaSorteio.length < 4 ){
-        alert('Adicione no minimo 4 amigos!')
-        return
+        alert('Adicione no minimo 4 amigos!');
+        return;
     }
-    embaralha(listaSorteio)
+    embaralha(listaSorteio);
     let sorteio = document.getElementById('lista-sorteio');
     for (let i = 0; i < listaSorteio.length; i++) {
         if (i == listaSorteio.length - 1){
@@ -49,7 +49,7 @@ function embaralha(listaDeAmigos) {
 
         const indiceAleatorio = Math.floor(Math.random() * indice);
 
-        // atribuição via destructuring
+        
         [listaDeAmigos[indice - 1], listaDeAmigos[indiceAleatorio]] = 
             [listaDeAmigos[indiceAleatorio], listaDeAmigos[indice - 1]];
     }
